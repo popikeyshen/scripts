@@ -79,7 +79,14 @@ printf " if you have errors by opencv CV_LOAD_IMAGE_COLOR define following
         from src/caffe/layer_factory.cpp:4:
 /usr/include/boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
 compilation terminated.
-         export CPLUS_INCLUDE_PATH='$CPLUS_INCLUDE_PATH:/usr/include/python2.7/'   "
+         export CPLUS_INCLUDE_PATH='$CPLUS_INCLUDE_PATH:/usr/include/python2.7/'  
+         
+         6) pycaffe error
+         python/caffe/_caffe.cpp:10:31: fatal error: numpy/arrayobject.h: No such file or directory
+compilation terminated.
+        find ./ -name 'arrayobject.h'
+        add to makefile.config PYTHON_INCLUDE
+        ./usr/local/lib/python2.7/dist-packages/numpy/core/include "
 
 
 make runtest
