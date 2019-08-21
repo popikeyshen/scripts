@@ -50,6 +50,7 @@ sudo apt-get install -y python-matplotlib python-numpy python-pil python-scipy
 sudo apt-get install -y build-essential cython
 sudo apt-get install -y python-skimage
 
+
 printf " if you have errors by opencv CV_LOAD_IMAGE_COLOR define following
         #define CV_LOAD_IMAGE_COLOR cv::IMREAD_COLOR
         #define CV_LOAD_IMAGE_GRAYSCALE 0 
@@ -72,7 +73,13 @@ printf " if you have errors by opencv CV_LOAD_IMAGE_COLOR define following
         3) add CUSTOM_CXX := g++ -std=c++11 for OpenCV 4 support
         
         4) if more opencv errors
-         USE_PKG_CONFIG := 1   "
+         USE_PKG_CONFIG := 1  
+         
+        5) boost error
+        from src/caffe/layer_factory.cpp:4:
+/usr/include/boost/python/detail/wrap_python.hpp:50:23: fatal error: pyconfig.h: No such file or directory
+compilation terminated.
+         export CPLUS_INCLUDE_PATH='$CPLUS_INCLUDE_PATH:/usr/include/python2.7/'   "
 
 
 make runtest
