@@ -80,6 +80,11 @@ export PYTHONPATH=/home/user/pythonLayer/
 
 ### Errors
 
+error while loading shared libraries: libopencv_highgui.so.3.4
+    sudo /bin/bash -c 'echo "/usr/local/lib" > /etc/ld.so.conf.d/opencv.conf'
+    sudo ldconfig
+
+
 If you have errors - look comments in the install script. And dont forget to install the same versions of OpenCV and Contrib
 
 
